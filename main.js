@@ -10,30 +10,28 @@ let volverACalcular = false;
 let tipoMoneda = "";
 
 //funciones
-function depositoF() { deposito = parseFloat(prompt("cuanto dinero queres depositar?")) }
-function diasF() { dias = parseInt(prompt("durante cuantos dias queres dejar depositado tu dinero ? ")) }
+function depositoF() { deposito = parseFloat(prompt("Cuanto dinero queres depositar?")) }
+function diasF() { dias = parseInt(prompt("Durante cuantos dias queres dejar depositado tu dinero ? ")) }
 function interesesGanadosF() {
     if (tipoMoneda == "pesos") {
         interesesGanados = deposito * (tazaAnualPesos * dias / 365)
-        alert(" si depositas  " + " $ " + deposito + " ganaras " + interesesGanados.toFixed(2) + " en intereses")
+        alert(" Si depositas  " + " $ " + deposito + " ganaras " + interesesGanados.toFixed(2) + " en intereses")
         montoFinal = interesesGanados + deposito
-        alert("el monto final sera : " + " $ " + montoFinal.toFixed(2));
-
+        alert("El monto final sera : " + " $ " + montoFinal.toFixed(2));
     }
     else if (tipoMoneda == "dolares") {
         interesesGanados = deposito * (tazaAnualDolares * dias / 365)
-        alert(" si depositas  " + " u$s" + deposito + " ganaras " + interesesGanados.toFixed(2) + " en intereses")
+        alert(" Si depositas  " + " u$s" + deposito + " ganaras " + interesesGanados.toFixed(2) + " en intereses")
         montoFinal = interesesGanados + deposito
-        alert("el monto final sera : " + " u$s " + montoFinal.toFixed(2));
+        alert("El monto final sera : " + " u$s " + montoFinal.toFixed(2));
     }
-
 }
 
-//ciclo
-
+//Ciclo
+alert("Hola! Este es un simulador de plazos fijos")
 do {
 
-    tipoMoneda = prompt("queres calcular un plazo en pesos o en dolares?").toLowerCase()
+    tipoMoneda = prompt("Queres calcular un plazo en pesos o en dolares?").toLowerCase()
     switch (tipoMoneda) {
         case "pesos":
             depositoF()
@@ -46,19 +44,17 @@ do {
             interesesGanadosF()
             break;
         default:
-            alert(" el tipo de moneda no es correcto")
+            alert(" El tipo de moneda no es correcto")
             break;
 
     }
 
-    volverACalcular = confirm("deseas calcular otro?")
-    //     if (confirm = true) {
-    //         alert("Perfecto! comenzaremos de nuevo")
+    volverACalcular = confirm("Queres calcular un nuevo plazo fijo?")
+    if (volverACalcular == true) {
+        alert(" Perfecto! ingrese nuevos datos!")
 
-    //     }else{
-    //         alert("Muchas gracias! vuelva pronto")
-    //     }
-    // }
+    }
+} while (volverACalcular);
+alert("Muchas gracias! vuelva pronto!")
 
-}
-while (volverACalcular);
+
