@@ -25,7 +25,7 @@ function interesesGanadosF(){
 
 do {
 
-    tipoMoneda =  prompt ("queres calcular un plazo en pesos o en dolares?")
+    tipoMoneda =  prompt ("queres calcular un plazo en pesos o en dolares?").toLowerCase()
     switch (tipoMoneda) {
 
         case "pesos" :
@@ -41,7 +41,7 @@ do {
             break;
 
             default:
-                alert(" el tipo de moenda no es correcto")
+                alert(" el tipo de moneda no es correcto")
                 break;
 
     }
