@@ -10,7 +10,21 @@ let volverACalcular = false;
 let tipoMoneda = "";
 
 //funciones
-function depositoF() { deposito = parseFloat(prompt("Cuanto dinero queres depositar?")) }
+function depositoF() {
+    deposito = parseFloat(prompt("Cuanto dinero queres depositar?"))
+  while (Number.isNaN(deposito) || deposito === 0) {
+        if (deposito !== 0) {
+            alert("debe agregar un numero")
+        } else {
+            alert("debe agregar un numero distinto a cero")
+        }
+        deposito = parseFloat(prompt("Cuanto dinero queres depositar?"))
+    }
+    return (deposito)
+}
+
+
+
 function diasF() { dias = parseInt(prompt("Durante cuantos dias queres dejar depositado tu dinero ? ")) }
 function interesesGanadosF() {
     if (tipoMoneda == "pesos") {
